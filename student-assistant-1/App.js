@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, SafeAreaView } from 'react-native';
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon} from 'native-base';
+import { Container, Header, Title, Card, CardItem, Content, Footer, FooterTab, Button, Left, Right, Body, Icon} from 'native-base';
 import { Font, AppLoading } from "expo";
 
 export default class App extends React.Component {
@@ -14,30 +14,36 @@ export default class App extends React.Component {
                 </Button>
               </Left>
               <Body>
-                <Title>Student Assistant</Title>
+                <Text style={styles.TitleText}>Student Assistant</Text>
               </Body>
               <Right />
             </Header>
             <Content>
-              <Text>
-                Aqui se insertará el menú
-              </Text>
+              <Card>
+                <CardItem>
+                  <Body>
+                    <Text style={styles.TextHome}>
+                    Bienvenido usuario
+                    </Text>
+                  </Body>
+                </CardItem>
+              </Card>
             </Content>
             <Footer>
               <FooterTab>
-                <Button iconLeft>
+                <Button icon>
                   <Icon name='home' />
                 </Button>
-                <Button iconLeft>
+                <Button icon>
                   <Icon name='clock' />
                 </Button>
-                <Button iconLeft>
+                <Button icon>
                   <Icon name='list-box' />
                 </Button>
-                <Button iconLeft>
+                <Button icon>
                   <Icon name='calendar' />
                 </Button>
-                <Button iconLeft>
+                <Button icon>
                   <Icon name='more' />
                 </Button>
               </FooterTab>
@@ -51,5 +57,17 @@ const styles = StyleSheet.create({
   safeArea: {
       flex: 1,
       backgroundColor: '#ddd'
+  },
+  TitleText: {
+    fontWeight: '800',
+    fontSize: 18,
+    color: 'white'
+  },
+  TextHome: {
+    //ajustarlo y pasar este estilo a la padre para que este centrado el texto
+    fontWeight: '900',
+    fontSize: 22,
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });
