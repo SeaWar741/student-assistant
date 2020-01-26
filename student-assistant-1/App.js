@@ -7,7 +7,7 @@ export default class App extends React.Component {
   render() {
       return (
           <Container style={styles.safeArea}>
-            <Header>
+            <Header style={styles.Header}>
               <Left>
                 <Button transparent>
                   <Icon name='menu' />
@@ -69,5 +69,8 @@ const styles = StyleSheet.create({
     fontSize: 22,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  Header: {
+    backgroundColor: 'white'
   }
 });
